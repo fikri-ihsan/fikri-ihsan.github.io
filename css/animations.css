@@ -1,0 +1,24 @@
+/* Ticker R-to-L seamless */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* GSAP fallback */
+@media (prefers-reduced-motion: reduce) {
+  .hero-name,
+  .hero-sub,
+  .hero-ctas,
+  .hero-stats,
+  .hero-ticker,
+  .exp,
+  .portoBox,
+  .skill-cat,
+  .cert-swiper,
+  .edu-left img,
+  .edu-right,
+  .footer-content > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
