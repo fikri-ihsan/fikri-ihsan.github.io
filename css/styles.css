@@ -10,10 +10,6 @@
   --secondaryFont: "Inter";
 }
 
-@media screen and (max-width: 1200px) {
-  .main-container { width: 90%; }
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +21,7 @@ html { scroll-behavior: smooth; }
 body {
   background-color: var(--primaryBackgroundColor);
   position: relative;
+  overflow-x: hidden;
 }
 
 body::before {
@@ -40,7 +37,8 @@ body::before {
 }
 
 .main-container {
-  width: 1200px;
+  max-width: 1200px;
+  width: 90%;
   font-family: var(--primaryFont);
   margin: 0 auto;
 }
@@ -69,6 +67,10 @@ body::before {
   text-decoration: none;
   color: var(--primaryTextColor);
   font-size: 3rem;
+}
+
+.nav-toggle {
+  display: none;
 }
 
 nav ul {
