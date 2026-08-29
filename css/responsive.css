@@ -50,13 +50,26 @@
 
   .hero-ticker { padding: 0.8rem 0; }
 
-  .btn { padding: 12px 24px; font-size: 0.75rem; }
+  .btn { padding: 14px 24px; font-size: 0.75rem; }
 
-  .header { padding: 0.8rem 1rem; }
+  .header { padding: 0.8rem 1rem; flex-wrap: wrap; }
   .logo a { font-size: 2rem; }
 
-  nav ul { gap: 0.6rem; }
-  nav ul li a { font-size: 0.65rem; letter-spacing: 0.04em; padding: 0.5rem; }
+  .nav-toggle {
+    display: block;
+    background: transparent;
+    border: none;
+    color: var(--primaryTextColor);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+  }
+
+  nav { width: 100%; order: 3; display: none; }
+  .header.open nav { display: block; }
+  nav ul { flex-direction: column; align-items: flex-start; gap: 0.5rem; padding: 1rem 0; }
+  nav ul li a { font-size: 0.95rem; letter-spacing: 0.04em; padding: 0.75rem 0; }
 
   .edu-split {
     grid-template-columns: 1fr;
@@ -79,6 +92,12 @@
   #education, #skills, #experience, #certification, #portfolio, footer {
     padding: 3rem 0;
   }
+
+  .section-title { font-size: 1.5rem; margin-bottom: 2rem; }
+
+  .achievements { flex-wrap: wrap; gap: 1rem 0; }
+
+  .cert-swiper .swiper-pagination-bullet { width: 10px; height: 10px; }
 
   .exps { width: 100%; }
   .exp { gap: 1rem; }
