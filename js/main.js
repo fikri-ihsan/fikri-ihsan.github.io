@@ -1,6 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // --- Mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const headerEl = document.querySelector('.header');
+  if (navToggle && headerEl) {
+    navToggle.addEventListener('click', () => {
+      const open = headerEl.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open);
+    });
+    headerEl.querySelectorAll('nav a').forEach(a =>
+      a.addEventListener('click', () => {
+        headerEl.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }));
+  }
+
   // --- Header scroll glass effect
   const header = document.querySelector('.header');
   let ticking = false;
